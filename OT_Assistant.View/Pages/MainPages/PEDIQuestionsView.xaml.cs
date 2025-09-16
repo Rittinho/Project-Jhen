@@ -6,4 +6,5 @@ public partial class PEDIQuestionsView : ContentPage
 	{
 		InitializeComponent();
 	}
+
 }

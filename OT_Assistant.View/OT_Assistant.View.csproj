@@ -75,6 +75,9 @@
 	  <MauiXaml Update="Pages\Components\MapItems\View\MapItemsGraphComponent.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\Components\Questionnaire\View\TopicQuestionnaireComponent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\MainPages\FunctionalSkillsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

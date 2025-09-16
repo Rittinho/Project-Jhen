@@ -1,58 +1,38 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:OT_Assistant.ViewModel.Questions;assembly=OT_Assistant.ViewModel"
              x:Class="OT_Assistant.View.Pages.MainPages.PEDIQuestionsView"
              Title="PEDIQuestionsView">
-    <VerticalStackLayout>
-        <Border MaximumWidthRequest="1470"
-                StrokeThickness="0"
-                StrokeShape="24"
-                Background="#2C2D3F"
-                Margin="20">
-            <Grid RowDefinitions="*,*">
-                <Border  MaximumWidthRequest="1170"
-                         StrokeThickness="0"
-                         StrokeShape="24"
-                         Background="#1C1924"
-                         Margin="10">
-                    <Grid  RowDefinitions="*,*">
-                        <Label Text="Auto cuidado"
-                               FontSize="40"
-                               HorizontalOptions="Center"
-                               FontAttributes="Bold"/>
-                        <Grid HeightRequest="300"/>
-                    </Grid>
-                </Border>
-                <Border Grid.Row="1" 
-                        Margin="0,0,0,10"
-                        StrokeShape="24"
-                        StrokeThickness="0"
-                        Background="#1C1924"
-                        MaximumWidthRequest="1370">
-                    <Grid RowDefinitions="*,*">
-                        <Label Text="Alimentação"
-                               FontSize="25"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"/>
-                        <Grid Grid.Row="1">
-                            <Grid RowDefinitions="*,*">
-                                <Label Text="Tesxtura dos alimentos"
-                                       Margin="30,0,0,0"
-                                       FontSize="20"
-                                       VerticalOptions="Center"/>
-                                <VerticalStackLayout Grid.Row="1">
-                                    <Grid RowDefinitions="*,*">
-                                        <Label Text=" Comealimento batido/amassado/coado"
-                                               FontSize="15"
-                                               HorizontalOptions="Center"
-                                               VerticalOptions="Center"/>
-                                    </Grid>
-                                </VerticalStackLayout>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Border>
-            </Grid>
-        </Border>
+    <ContentPage.BindingContext>
+        <viewModels:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
+
+        <Label Text="{Binding CurrentQuestion.QuestionText}"
+             FontSize="24"
+             FontAttributes="Bold"
+             HorizontalOptions="Center" />
+
+        <CollectionView ItemsSource="{Binding CurrentQuestion.Answers}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Button Text="{Binding AnswerText}"
+                          Command="{Binding OnClickCommand}"
+                          BackgroundColor="{Binding ButtonColor}"
+                          IsEnabled="{Binding IsButtonEnabled}"
+                          FontSize="18"
+                          Padding="10"
+                          Margin="5" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Próxima Pergunta"
+              Command="{Binding NextQuestionCommand}"
+              HorizontalOptions="Center"
+              Margin="0,30,0,0"/>
+
     </VerticalStackLayout>
 </ContentPage>

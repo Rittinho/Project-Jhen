@@ -66,14 +66,14 @@ public partial class ItemMapGraphComponent : ContentView
         barGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = thirdColumnWidth });
 
         // Crie a barra (BoxView) e posicione-a na coluna do meio
-        var errorBar = new BoxView
+        var errorBar = new BoxView()
         {
             Opacity = 0.08,
-            WidthRequest = scorePEDI.ReadDefaultError()*2,
+            WidthRequest = scorePEDI.ReadDefaultError() * 2+3,
             BackgroundColor = Colors.Yellow, // Uma cor forte para garantir que seja visível
             HorizontalOptions = LayoutOptions.Fill,
             VerticalOptions = LayoutOptions.Fill,
-            Margin = 0 // Garante que a barra preenche a coluna
+            Margin = 0,// Garante que a barra preenche a coluna
         };
         var scoreBar = new BoxView
         {
