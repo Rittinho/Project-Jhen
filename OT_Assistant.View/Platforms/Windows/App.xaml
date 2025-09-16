@@ -1,0 +1,8 @@
+﻿<maui:MauiWinUIApplication
+    x:Class="OT_Assistant.View.WinUI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:maui="using:Microsoft.Maui"
+    xmlns:local="using:OT_Assistant.View.WinUI">
+
+</maui:MauiWinUIApplication>

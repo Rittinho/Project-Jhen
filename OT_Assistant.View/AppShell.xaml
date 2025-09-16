@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="OT_Assistant.View.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:OT_Assistant.View.Pages.MainPages"
+    Title="OT_Assistant.View">
+
+    <TabBar>
+        <Tab>
+            <ShellContent
+                    Title="PEDI"
+                    ContentTemplate="{DataTemplate local:FunctionalSkillsView}"
+                    Route="FunctionalSkillsView" />
+        </Tab>
+        <Tab>
+            <ShellContent
+                    Title="Questionario"
+                    ContentTemplate="{DataTemplate local:PEDIQuestionsView}"
+                    Route="PEDIQuestionsView" />
+        </Tab>
+    </TabBar>
+</Shell>
